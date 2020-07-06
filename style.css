@@ -104,6 +104,7 @@ body{
     text-align: center;
 }
 .listitem span{
+    font-size: x-large;
     width:100%; 
     font-weight: bold;
     text-shadow: 0 5px 4px  aquamarine ;

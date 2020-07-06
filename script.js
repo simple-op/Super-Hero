@@ -95,8 +95,8 @@
 // search button on click handler here
     button.addEventListener('click',function(){
 
-        if(document.getElementById('list'))   
-        closeAllLists();
+          
+           closeAllLists();
 
        let listitems=document.getElementById("list");
        let error= document.getElementById("error");
