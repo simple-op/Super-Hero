@@ -121,4 +121,56 @@ ul{
     height: 100%;
 }
 
+#notification{
+    visibility: hidden;
+    
 
+}
+#notification.show{
+    visibility:visible;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    /* transition: 1s linear  all; */
+    /* filter: opacity(0.7); */
+    animation: fadein 0.5s, fadeout 0.5s 1.5s;
+
+}
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+#notify{
+
+    position: fixed;
+    z-index: 1;
+    top: 5vh;
+    right: 0vh;
+}
+
+
+.suggestions{
+    border: solid;
+    border-width: 0.5px;
+    cursor: pointer;
+
+}
+.suggestions:hover{
+    background-color: gray;
+}

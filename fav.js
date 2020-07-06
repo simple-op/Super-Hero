@@ -26,12 +26,13 @@ for(let item in localStorage){
     var image=document.createElement('img');
     var href=document.createElement('a');
     href.href="/info.html";
-    href.target='blank';
+    // href.target='blank';
     
     href.addEventListener('click',function(){
         
            
            showInfo(data);
+           
     })
 
     let span=document.createElement('span');

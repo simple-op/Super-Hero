@@ -1,5 +1,5 @@
 {   
-    var transfer;
+    
     
 
     function showInfo(data){
@@ -18,8 +18,79 @@
         localStorage.setItem(data.name, JSON.stringify(data));
         
     }   
-    let button=document.getElementById("searchButton");
     
+    let button=document.getElementById("searchButton");
+    let input=document.getElementById("searchInput");
+    input.addEventListener('click',function(){
+        if(document.getElementById('list'))   
+        closeAllLists();
+    })
+    if(input.value==''){
+    input.addEventListener('input',function(){
+        
+
+        if(document.getElementById('list'))   
+        closeAllLists();
+        
+
+        text=input.value;
+        let xhrhttp=new XMLHttpRequest();
+        xhrhttp.onload=function(){
+
+            let json=  xhrhttp.response;
+     
+            let data=JSON.parse(json);
+       
+            let list=document.createElement('div');
+             list.id="list";
+            let suggestlist=document.getElementById('suggestlist');
+            suggestlist.appendChild(list);
+
+        
+        for (const key in data.results) {
+         {
+            console.log(data.results[key].name);
+            let suggestions=document.createElement('div');
+            suggestions.addEventListener('click',function(){
+
+                input.value=suggestions.innerText;
+            })
+           
+            suggestions.className="suggestions";
+
+
+            suggestions.innerText=data.results[key].name;
+            list.appendChild(suggestions);
+            
+
+
+            
+
+                
+                
+            }
+        }
+
+       
+
+     
+    }
+        xhrhttp.open('get','https://www.superheroapi.com/api.php/2018504438283292/search/'+text,true);
+        xhrhttp.send(); 
+   
+    })
+}
+
+
+
+    function closeAllLists() {
+   
+        let list=document.getElementById('list');
+        list.remove();
+     
+  }
+
+
    
 
 
@@ -28,10 +99,10 @@
 
     button.addEventListener('click',function(){
 
-       
+        if(document.getElementById('list'))   
+        closeAllLists();
 
        let listitems=document.getElementById("list");
-       let input=document.getElementById("searchInput");
        let error= document.getElementById("error");
        var results=document.getElementById('result');
        var noOfResults=document.getElementById('noOfResults');
@@ -62,6 +133,7 @@
                 // alert("Search a valid Name");
                 return;
             }
+ 
          var list=document.createElement('ul');
          noOfResults.innerText='Results Found : '+data.results.length;
            
@@ -74,16 +146,24 @@
                 var image=document.createElement('img');
                 var href=document.createElement('a');
                 href.href="/info.html";
-                href.target='blank';
+                // href.target='blank';
                 favbutton.addEventListener('click',function(){
 
                     addToFav(data.results[result]);
+                    // alert("SuccessFully Added");
+                    let x=document.getElementById('notification');
 
+                    x.className = "show";
+
+                    // After 3 seconds, remove the show class from DIV
+                    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
+                    
                 })
                 href.addEventListener('click',function(){
                     
                        
                        showInfo(data.results[result]);
+
                 })
 
                 var span=document.createElement('span');
