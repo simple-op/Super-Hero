@@ -16,16 +16,23 @@
     let button=document.getElementById("searchButton");
     let input=document.getElementById("searchInput");
     input.addEventListener('click',function(){
-        if(document.getElementById('list'))   
+          
         closeAllLists();
     })
-    if(input.value==''){
+    
     input.addEventListener('input',function(){
         
 
-        if(document.getElementById('list'))   
-        closeAllLists();
         
+        closeAllLists();
+        let list=document.createElement('div');
+        list.id="list";
+       let suggestlist=document.getElementById('suggestlist');
+       suggestlist.appendChild(list);
+
+        var noOfResults=document.getElementById('noOfResults');
+
+        noOfResults.innerText="";
 
         text=input.value;
         // created a new instance of XMLHttpRequest
@@ -36,11 +43,7 @@
      
             let data=JSON.parse(json);
        
-            let list=document.createElement('div');
-             list.id="list";
-            let suggestlist=document.getElementById('suggestlist');
-            suggestlist.appendChild(list);
-
+           
         // iterating over the results we got from the api 
         for (const key in data.results) {
          {
@@ -75,13 +78,14 @@
         xhrhttp.send(); 
    
     })
-}
+
 
 
 // theis function will close all the preivious results if input changes
     function closeAllLists() {
    
         let list=document.getElementById('list');
+        if(list)
         list.remove();
      
   }
