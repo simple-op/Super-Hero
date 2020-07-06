@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- HOME PAGE  -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,29 +11,30 @@
 
 </head>
 <body id='body'>
+<!-- FAVOURITES BUTTON TO NAVIGATE -->
+   <div id="notify"> <span  id="notification">SuccessFully Added To Favourites</span> </div>
+<!-- SUPERHERO HEADING -->
+   <h1 style="animation: change 2s ease-in-out infinite alternate ;">SUPERHERO <span style="float: right;"><a href="fav.html">Favourites</a></span></h1>
 
- <div id="notify"> <span  id="notification">SuccessFully Added To Favourites</span> </div>
 
- <h1 style="animation: change 2s ease-in-out infinite alternate ;">SUPERHERO <span style="float: right;"><a href="/fav.html">Favourites</a></span></h1>
-
-
-   
- <div  class="input-group mb-3">
+   <!-- INPUT  BAR-->
+   <div  class="input-group mb-3">
         <input required type="text" id="searchInput" class="form-control" placeholder="Search Superhero....." aria-label="Recipient's username" aria-describedby="basic-addon2">
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" id="searchButton" type="button">Search</button>
+         <button class="btn btn-outline-secondary" id="searchButton" type="button">Search</button>
           
         
         
       </div>
  </div>
+ <!-- SUGGESTIONS -->
  <div id="suggestlist"></div>
       <div id="error" >* Search a valid name</div>
       <div id='noOfResults'></div>
       <div id="result"></div>
       <!--  -->
       
- 
+ <!-- SCRIPT FILE ADDED -->
     <script type="text/javascript" src="script.js"></script>
     <!-- <script type="text/javascript" src="scriptinfo.js"></script> -->
     

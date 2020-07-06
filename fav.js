@@ -23,6 +23,7 @@ for(let item in localStorage){
     var listitem=document.createElement('li');
     
     var removeButton =document.createElement('button');
+    removeButton.className='removeButton';
     var image=document.createElement('img');
     var href=document.createElement('a');
     href.href="/info.html";
@@ -32,7 +33,7 @@ for(let item in localStorage){
         
            
            showInfo(data);
-           
+
     })
 
     let span=document.createElement('span');

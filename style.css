@@ -1,3 +1,4 @@
+/* animations added to the page */
 @keyframes changeb{
     0%{
       BOX-SHADOW: 0 0 5PX 4PX mediumseagreen;    /* top:50px; */
@@ -48,7 +49,7 @@
         }
 
 
-
+/* put padding */
 
 
 body{
@@ -60,8 +61,8 @@ body{
     visibility: hidden;
     
 }
-
-.favbtn{
+/* search button css */
+.favbtn,.removeButton{
     /* margin-left: 5vh; */
     height: 5vh;
     margin-top: auto;
@@ -76,13 +77,17 @@ body{
     font-weight: bold;
 
 
+
 }
+/*result search items css */
 .listitem{
+
  display: flex;
  flex-direction: row;
  justify-content: space-between;
  margin-top: 15px;
  height: 20vh;
+ border-radius: 100px;
  /* border:solid; */
  animation: changeb 2s ease-in-out infinite alternate ;
 
@@ -99,9 +104,23 @@ body{
     text-shadow: 0 5px 4px  aquamarine ;
 }
 .images{
-  height: 100%;
+  height: 20vh;
+  width: 20vh;
+  border-radius: 50%;
 
 }
+
+.favbtn:focus,.removeButton:focus{
+    outline: none;
+    border: none;
+}
+
+.favbtn:hover,.removeButton:hover{
+
+ filter: grayscale();
+}
+
+/*  */
 
 ul{
     padding-inline-start: 0px;
