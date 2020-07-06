@@ -8,14 +8,18 @@ function showInfo(data){
    
        
    }
+reload();
 
-
-
+function reload()
+{
+    let list=document.createElement('ul');
 
 for(let item in localStorage){
      let data=JSON.parse(localStorage.getItem(item))
     
-    let list=document.getElementById('listFav');
+    let listFav=document.getElementById('listFav');
+    listFav.appendChild(list);
+    
     var listitem=document.createElement('li');
     
     var removeButton =document.createElement('button');
@@ -50,6 +54,10 @@ for(let item in localStorage){
            
         localStorage.removeItem(item);
         listitem.remove();
+        list.remove();
+        reload();
+        
+
  })
 
     // favbutton.className='favbtn';
@@ -69,4 +77,4 @@ for(let item in localStorage){
 
 
 
-
+}
