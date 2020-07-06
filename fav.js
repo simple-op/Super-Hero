@@ -27,7 +27,7 @@ for(let item in localStorage){
     removeButton.className='removeButton';
     var image=document.createElement('img');
     var href=document.createElement('a');
-    href.href="/info.html";
+    href.href="info.html";
     // href.target='blank';
     // send user to info from favourites
     href.addEventListener('click',function(){
