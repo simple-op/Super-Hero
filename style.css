@@ -1,3 +1,37 @@
+@keyframes changeb{
+    0%{
+      BOX-SHADOW: 0 0 10PX 4PX mediumseagreen;    /* top:50px; */
+        }
+        33%{
+          BOX-SHADOW: 0 0 10PX 4PX red;
+        }
+        66%{
+          BOX-SHADOW: 0 0 10PX 4PX rgb(236, 35, 193);
+        }
+        100%{
+          BOX-SHADOW: 0 0 10PX 4PX DODGERBLUE;
+        
+        
+      }
+    }
+@keyframes change{
+        0%{
+          text-SHADOW:  0 10PX 4PX mediumseagreen;    /* top:50px; */
+            }
+            33%{
+              text-SHADOW:  0 10PX 4PX red;
+            }
+            66%{
+              text-SHADOW:  0 10PX 4PX rgb(236, 35, 193);
+            }
+            100%{
+              text-shadow:  0 10PX 4PX DODGERBLUE;
+            
+            
+          }
+        }
+
+
 #error{
     color: red;
     visibility: hidden;
@@ -12,5 +46,18 @@
  flex-direction: row;
  justify-content: space-between;
  margin: 15px;
+ height: 20vh;
+ /* border:solid; */
+ animation: changeb 2s ease-in-out infinite alternate ;
+
+
+}
+.listitem span{
+     
+    font-weight: bold;
+    text-shadow: 0 5px 4px  aquamarine ;
+}
+.images{
+  height: 100%;
 
 }
