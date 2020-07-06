@@ -1,36 +1,59 @@
 @keyframes changeb{
     0%{
-      BOX-SHADOW: 0 0 10PX 4PX mediumseagreen;    /* top:50px; */
+      BOX-SHADOW: 0 0 5PX 4PX mediumseagreen;    /* top:50px; */
         }
         33%{
-          BOX-SHADOW: 0 0 10PX 4PX red;
+          BOX-SHADOW: 0 0 5PX 4PX red;
         }
         66%{
-          BOX-SHADOW: 0 0 10PX 4PX rgb(236, 35, 193);
+          BOX-SHADOW: 0 0 5PX 4PX rgb(236, 35, 193);
         }
         100%{
-          BOX-SHADOW: 0 0 10PX 4PX DODGERBLUE;
+          BOX-SHADOW: 0 0 5PX 4PX DODGERBLUE;
         
         
       }
     }
-@keyframes change{
+    @keyframes changec{
         0%{
-          text-SHADOW:  0 10PX 4PX mediumseagreen;    /* top:50px; */
+          background-color:  mediumseagreen;    /* top:50px; */
             }
             33%{
-              text-SHADOW:  0 10PX 4PX red;
+                background-color: red;
             }
             66%{
-              text-SHADOW:  0 10PX 4PX rgb(236, 35, 193);
+                background-color:  rgb(236, 35, 193);
             }
             100%{
-              text-shadow:  0 10PX 4PX DODGERBLUE;
+                background-color:  DODGERBLUE;
+            
+            
+          }
+        }    
+@keyframes change{
+        0%{
+          text-SHADOW:  0 5PX 4PX mediumseagreen;    /* top:50px; */
+            }
+            33%{
+              text-SHADOW:  0 5PX 4PX red;
+            }
+            66%{
+              text-SHADOW:  0 5PX 4PX rgb(236, 35, 193);
+            }
+            100%{
+              text-shadow:  0 5PX 4PX DODGERBLUE;
             
             
           }
         }
 
+
+
+
+
+body{
+    padding:10vh;
+}
 
 #error{
     color: red;
@@ -39,21 +62,39 @@
 }
 
 .favbtn{
-    margin-left: 5vh;
+    /* margin-left: 5vh; */
+    height: 5vh;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: ;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    animation: changec 2s ease-in-out infinite alternate ;
+    color: white;
+    font-weight: bold;
+
+
 }
 .listitem{
  display: flex;
  flex-direction: row;
  justify-content: space-between;
- margin: 15px;
+ margin-top: 15px;
  height: 20vh;
  /* border:solid; */
  animation: changeb 2s ease-in-out infinite alternate ;
 
 
 }
+.listitem a{
+    /* width: 100%; */
+    flex-grow: 1;
+    text-align: center;
+}
 .listitem span{
-     
+    width:100%; 
     font-weight: bold;
     text-shadow: 0 5px 4px  aquamarine ;
 }
@@ -61,3 +102,23 @@
   height: 100%;
 
 }
+
+ul{
+    padding-inline-start: 0px;
+}
+
+/* info */
+#infoimage{
+     
+    height:30vh ;
+    width: 30vh ;
+    
+    border:solid;
+
+}
+#infoimage img{
+    width: 100%;
+    height: 100%;
+}
+
+
