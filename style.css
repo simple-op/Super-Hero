@@ -1,0 +1,16 @@
+#error{
+    color: red;
+    visibility: hidden;
+    
+}
+
+.favbtn{
+    margin-left: 5vh;
+}
+.listitem{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ margin: 15px;
+
+}

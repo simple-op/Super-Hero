@@ -6,9 +6,20 @@
     <title>Homepage</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="Assets/Superhero-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
 <body>
+    <div class="input-group mb-3">
+        <input required type="text" id="searchInput" class="form-control" placeholder="Search Superhero....." aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" id="searchButton" type="button">Search</button>
+          
+        </div>
+        
+      </div>
+      <div id="error" >*Search a valid name</div>
+      <div id="result"></div>
     <script src="script.js"></script>
 </body>
 </html>
