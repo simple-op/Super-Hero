@@ -52,8 +52,13 @@
 /* put padding */
 
 
+#body{
+    padding:10vh;
+    background-color: black;
+}
 body{
     padding:10vh;
+    
 }
 
 #error{
@@ -109,7 +114,7 @@ body{
   border-radius: 50%;
 
 }
-
+/* on focus on buttons */
 .favbtn:focus,.removeButton:focus{
     outline: none;
     border: none;
@@ -126,7 +131,7 @@ ul{
     padding-inline-start: 0px;
 }
 
-/* info */
+/* info  page image css*/
 #infoimage{
      
     height:30vh ;
@@ -139,7 +144,7 @@ ul{
     width: 100%;
     height: 100%;
 }
-
+/* to get notification for addition to fav */
 #notification{
     visibility: hidden;
     
@@ -156,6 +161,7 @@ ul{
     animation: fadein 0.5s, fadeout 0.5s 1.5s;
 
 }
+/* animation added to toast notify */
 @-webkit-keyframes fadein {
     from {bottom: 0; opacity: 0;} 
     to {bottom: 30px; opacity: 1;}
@@ -188,6 +194,7 @@ ul{
     border: solid;
     border-width: 0.5px;
     cursor: pointer;
+    color: white;
 
 }
 .suggestions:hover{

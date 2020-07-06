@@ -1,24 +1,18 @@
 {   
     
     
-
+    // these will send data to local storage from where other pages can retrieve it 
     function showInfo(data){
         console.log(data);
         localStorage.setItem('info', JSON.stringify(data));
-        
-
-       
-           
-       }
-
-    
+    }
     function addToFav(data){
         
         console.log(data);
         localStorage.setItem(data.name, JSON.stringify(data));
         
     }   
-    
+    // adding listener to input field everytime we input somthg
     let button=document.getElementById("searchButton");
     let input=document.getElementById("searchInput");
     input.addEventListener('click',function(){
@@ -34,6 +28,7 @@
         
 
         text=input.value;
+        // created a new instance of XMLHttpRequest
         let xhrhttp=new XMLHttpRequest();
         xhrhttp.onload=function(){
 
@@ -46,7 +41,7 @@
             let suggestlist=document.getElementById('suggestlist');
             suggestlist.appendChild(list);
 
-        
+        // iterating over the results we got from the api 
         for (const key in data.results) {
          {
             console.log(data.results[key].name);
@@ -75,6 +70,7 @@
 
      
     }
+    // open function to request to the following url
         xhrhttp.open('get','https://www.superheroapi.com/api.php/2018504438283292/search/'+text,true);
         xhrhttp.send(); 
    
@@ -82,7 +78,7 @@
 }
 
 
-
+// theis function will close all the preivious results if input changes
     function closeAllLists() {
    
         let list=document.getElementById('list');
@@ -96,7 +92,7 @@
 
 
 
-
+// search button on click handler here
     button.addEventListener('click',function(){
 
         if(document.getElementById('list'))   
@@ -117,7 +113,7 @@
             }
        let text=input.value;
        console.log(text);
-    
+    // new instance of XMlHttpRequest for search button
        let xhrhttp=new XMLHttpRequest();
        xhrhttp.onload=function(){
         
@@ -125,6 +121,7 @@
          
          let data=JSON.parse(json);
          console.log(data);
+        //  got response in string converted to json
          if(data.response=='error')
             {   input.style.borderColor='red';
                  error.style.visibility='inherit';
@@ -136,7 +133,7 @@
  
          var list=document.createElement('ul');
          noOfResults.innerText='Results Found : '+data.results.length;
-           
+        //    itirating over the results
          for(let result in data.results){
 
                  
@@ -171,7 +168,7 @@
                 
                
                 
-               
+            //    images will be put in the results
                 image.className='images';
                 image.src=data.results[result].image.url;
                 console.log(data.results[result].image.url);
@@ -185,7 +182,7 @@
                 listitem.className='listitem';
                 
                 
-                
+                // appending to the results
                 span.innerText=data.results[result].name;
                 listitem.appendChild(image);
                 listitem.appendChild(href);
@@ -200,7 +197,7 @@
         }
 
     
-
+// open function for request to folowing url
        xhrhttp.open('get','https://www.superheroapi.com/api.php/2018504438283292/search/'+text,true);
        xhrhttp.send(); 
   

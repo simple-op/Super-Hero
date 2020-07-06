@@ -1,14 +1,16 @@
-
+// getting data from local storage
 let data = JSON.parse(localStorage.getItem('info'));
 localStorage.removeItem('info');
+// removing from local storage to save some space
 let infoimage=document.getElementById('infoimage');
 let image=document.getElementById('image');
+// loading image from api url
 image.src=data.image.url;
 let title=document.getElementById('title');
 let heading=document.getElementById('heading');
 heading.innerText=data.name;
 title.innerText=data.name;
-
+// taking appearance data from here
 let appearance=document.getElementById('appearance');
     let list1=document.createElement('ul');
     appearance.appendChild(list1)
@@ -17,8 +19,8 @@ let appearance=document.getElementById('appearance');
         listli.innerText=item+" : " +data.appearance[item];
         list1.appendChild(listli);
     }  
-
-let work=document.getElementById('work');
+// work data will be  appended  here
+ let work=document.getElementById('work');
     
     let list5=document.createElement('ul');
     work.appendChild(list5)
@@ -27,7 +29,7 @@ let work=document.getElementById('work');
        listli.innerText=item+" : " +data.work[item];
        list5.appendChild(listli);
     }  
-
+// powerstats will be appeneded here
 let powerstats=document.getElementById('powerstats');
 
     let list4=document.createElement('ul');
@@ -38,7 +40,7 @@ let powerstats=document.getElementById('powerstats');
        list4.appendChild(listli);
     }  
 
-
+// biography will be here
 let biography=document.getElementById('biography');
     let list3=document.createElement('ul');
     biography.appendChild(list3)
@@ -50,7 +52,7 @@ let biography=document.getElementById('biography');
 
 
 
-
+// connections data will be here
 let connections=document.getElementById('connections');
     let list2=document.createElement('ul');
     connections.appendChild(list2)
